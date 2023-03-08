@@ -1,0 +1,141 @@
+<!DOCTYPE html> <!-- Объявление формата документа -->
+<html>
+<head> <!-- Техническая информация о документе -->
+	<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Определение области просмотра под все форматы -->
+	<meta charset="UTF-8"> <!-- Определяем кодировку символов документа -->
+		<title>Иднакарчик</title> <!-- Задаем заголовок документа -->
+		<link href="Favicon/favicon.ico" rel="shortcut icon" type="image/x-icon"> <!-- Путь к фавикону -->
+			<link rel="stylesheet" type="text/css" href="style.css"> <!-- Подключаем внешнюю таблицу стилей -->
+			 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/> <!-- Подключаем Leaflet -->
+			 <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script> <!-- Подключаем Leaflet -->
+					<!-- нахождение геолокации https://github.com/domoritz/leaflet-locatecontrol -->
+					<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.css" />
+					<script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+</head>
+<body> <!-- Основная часть документа -->
+	<!-- https://html5css.ru/howto/howto_js_full_page_tabs.php -->
+	<button class="tablink" onclick="openPage('Home', this)">Главная</button>
+	<button class="tablink" onclick="openPage('MAAAP', this)" id="defaultOpen">Карта</button>
+	<button class="tablink" onclick="openPage('Models', this)">Модели</button>
+	<button class="tablink" onclick="openPage('Museum', this,)">Сайт музея</button>
+
+	<div id="Home" class="tabcontent">
+	  <img id="id_preview" src="images/preview.png" alt="Иллюстрация">
+	  <div class="line1-box">
+		<div class="line1">
+			История
+			</div>
+		</div>
+		<div class="paragraph01" style="display: inline-flex;">
+		<div class="paragraph1">
+			  <p>В 1997 году в музее-заповеднике «Иднакар» была начата большая работа по созданию экспозиции «Городище Иднакар IX-XIII века». Авторами тематико-экспозиционного плана стали д.и.н. Иванова Маргарита Григорьевна и д.и.н.
+			  Останина Таисия Ивановна. Исполнителем выступил коллектив художников под руководством Дерягина Владимира Николаевича. Основной задачей экспозиции было всестороннее ознакомление посетителей музея с жизнью городища Иднакар. 
+			  В качестве основы были приняты материалы многолетних археологических исследований городща М. Г. Ивановой, доктора исторических наук, профессора, известного удмуртского археолога.</p>
+		</div>
+			<img src="images/zhizha.png" alt="Иллюстрация" width="350" height="350" align="right">
+		</div>
+				<div class="photos">
+					<a><img src="images/1.jpg" alt="" class="scale"></a>
+					<a><img src="images/2.jpg" alt="" class="scale"></a>
+					<a><img src="images/3.jpg" alt="" class="scale"></a>
+					<a><img src="images/4.jpg" alt="" class="scale"></a>	
+					<a><img src="images/5.jpg" alt="" class="scale"></a>
+					<a><img src="images/6.jpg" alt="" class="scale"></a>	
+					<a><img src="images/7.jpg" alt="" class="scale"></a>
+					<a><img src="images/8.jpg" alt="" class="scale"></a>
+				</div>
+			<div class="paragraph02 center" style="display: inline-flex;">
+				<img src="images/zhuzha.png" alt="Иллюстрация" width="250" height="250" align="left">
+				<div class="paragraph2">
+					<p>При создании экспозиции применялись необычные художественные и декоративные приемы. Использование большого количества искусственно состаренного дерева и элементов резьбы создают в экспозиции атмосферу средневекового поселения. 
+					  Яркой демонстрацией возможностей исторического моделирования является диорама «Городище Иднакар в эпоху расцвета». 
+					  Подобно распахнутому окну, диорама открывает вид на городище и окрестности, а комбинирование объема и тщательно прописанного фона создает потрясающее ощущениереальности.</p>
+				</div>
+			</div>
+			<div class="line2-box">
+				<div class="line2">
+				Участники Экспедиции
+			</div>
+		</div>
+	  		<div class="photos_people">
+			<a><img src="images/personphoto1.jpg" alt=""><p>Лягушка</p></a>
+			<a><img src="images/personphoto1.jpg" alt=""><p>Лягушка</p></a>
+			<a><img src="images/personphoto1.jpg" alt=""><p>Лягушка</p></a>
+			<a><img src="images/personphoto1.jpg" alt=""><p>Лягушка</p></a>
+			<a><img src="images/personphoto1.jpg" alt=""><p>Лягушка</p></a>
+			<a><img src="images/personphoto1.jpg" alt=""><p>Лягушка</p></a>
+			<a><img src="images/personphoto1.jpg" alt=""><p>Лягушка</p></a>
+			<a><img src="images/personphoto1.jpg" alt=""><p>Лягушка</p></a>
+			<a><img src="images/personphoto1.jpg" alt=""><p>Лягушка</p></a>
+			<a><img src="images/personphoto1.jpg" alt=""><p>Лягушка</p></a>
+			<a><img src="images/personphoto1.jpg" alt=""><p>Лягушка</p></a>
+			<a><img src="images/personphoto1.jpg" alt=""><p>Лягушка</p></a>
+		</div>
+		
+			<div id="id_mountain">
+				<img src="images/mountain.png" alt="Иллюстрация" width="100%" height="100%" align="center">
+				<div class="id_mountain_text_1">Made by Ilya Soskov</div>
+				<div class="id_mountain_text_2">MIIGAIK 2023</div>				
+			</div>		
+	</div>
+
+	<div id="MAAAP" class="tabcontent">
+	  <div id="map"></div>
+	</div>
+
+	<div id="Models" class="tabcontent">
+	  <h3>Модели</h3>
+	  <p>Get in touch, or swing by for a cup of coffee.</p>
+	</div>
+
+	<div id="Museum" class="tabcontent">
+		<div id="Museum_inside">
+			<p><a href="https://иднакар.рф/">Перейти на сайт музея Иднакар</a></p>
+		</div>
+	</div>
+	
+	<!-- Плавающая кнпока https://snipp.ru/jquery/up-down#link-knopka-vniz -->
+	<a href="#" id="scroll_top" title="Наверх"></a>
+	
+	<!-- Для работы верхнего меню -->
+	<script>
+		function openPage(pageName,elmnt,color) {
+			var i, tabcontent, tablinks;
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablink");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].style.backgroundColor = "";
+			}
+			document.getElementById(pageName).style.display = "block";
+			elmnt.style.backgroundColor = color;
+
+		}
+		// Get the element with id="defaultOpen" and click on it
+		document.getElementById("defaultOpen").click();
+	</script>
+
+	<!-- Плавающая кнпока https://snipp.ru/jquery/up-down#link-knopka-vniz -->
+	<script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+	
+	<script>
+	$(function(){
+		$(window).scroll(function(){
+			if($(window).scrollTop() > 100) {
+				$('#scroll_top').show();
+			} else {
+				$('#scroll_top').hide();
+			}
+		});
+	 
+		$('#scroll_top').click(function(){
+			$('html, body').animate({scrollTop: 0}, 600);
+			return false;
+		});
+	});
+	</script>
+	<script src="script.js"></script> <!-- Подключаем сценарии Leaflet -->
+</body>
+</html>
